@@ -34,11 +34,22 @@ export function SplineScene({ scene, className, fallbackHeight = '100%' }: Splin
   // Calculate appropriate minimum height based on device
   const getMinHeight = () => {
     if (isMobile) {
-      return Math.max(450, viewportHeight * 0.6) + 'px'; // Ensure minimum 450px height on mobile
+      return Math.max(500, viewportHeight * 0.6) + 'px'; // Increased minimum height on mobile
     } else if (isTablet) {
       return Math.max(500, viewportHeight * 0.7) + 'px'; // Ensure minimum 500px height on tablet
     } else {
       return fallbackHeight;
+    }
+  };
+
+  // Get transform style based on device
+  const getTransformStyle = () => {
+    if (isMobile) {
+      return 'scale(1.5) translateY(10%)'; // Bigger scale and centered on mobile
+    } else if (isTablet) {
+      return 'scale(1.2)'; // Slightly bigger on tablet
+    } else {
+      return 'scale(1)'; // Normal on desktop
     }
   };
 
@@ -83,7 +94,7 @@ export function SplineScene({ scene, className, fallbackHeight = '100%' }: Splin
             position: 'absolute',
             top: 0,
             left: 0,
-            transform: isMobile ? 'scale(1.2) translateY(-5%)' : isTablet ? 'scale(1.1)' : 'scale(1)',
+            transform: getTransformStyle(),
           }}
         />
       </motion.div>
