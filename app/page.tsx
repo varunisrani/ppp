@@ -37,7 +37,7 @@ export default function Page() {
           <div className="flex min-h-screen flex-col md:flex-row">
             {/* Left content */}
             <motion.div 
-              className="flex-1 p-6 sm:p-8 md:p-16 lg:p-24 relative z-10 flex flex-col justify-center order-2 md:order-1 pt-8 pb-12 md:py-0"
+              className="flex-1 p-6 sm:p-8 md:p-16 lg:p-24 relative z-10 flex flex-col justify-center order-2 md:order-1 pt-8 md:pt-0"
               initial="initial"
               animate="animate"
               variants={stagger}
@@ -78,7 +78,7 @@ export default function Page() {
 
             {/* Right content */}
             <motion.div 
-              className="flex-1 relative min-h-[450px] sm:min-h-[500px] md:min-h-screen order-1 md:order-2"
+              className="flex-1 relative min-h-[350px] sm:min-h-[500px] md:min-h-screen order-1 md:order-2 pb-4 md:pb-0"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
